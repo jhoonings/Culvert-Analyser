@@ -140,7 +140,7 @@ def process_video(file_path, resolution, job_id, page):
                 result = extract_info_from_frame(frame, roi)
 
                 if result[0]:
-                    if result[0][0] > 0:
+                    if int(result[0][0]) > 0:
                         logging.info(f"OCR Result: {result}")
                         values.append(result)
 
