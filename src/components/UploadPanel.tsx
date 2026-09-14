@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 
-const MAX_FILE_SIZE = 2000 * 1024 * 1024; // ~2 GB
+const MAX_FILE_SIZE = 1000 * 1024 * 1024; // ~1 GB
 
 interface UploadPanelProps {
   onUpload: (options: { file: File; resolution: string; }) => void;
