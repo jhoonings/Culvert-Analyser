@@ -140,8 +140,9 @@ def process_video(file_path, resolution, job_id, page):
                 result = extract_info_from_frame(frame, roi)
 
                 if result[0]:
-                    logging.info(f"OCR Result: {result}")
-                    values.append(result)
+                    if result[0][0] > 0:
+                        logging.info(f"OCR Result: {result}")
+                        values.append(result)
 
                 # update redis with values for live results
                 redis.set(f"result:{job_id}", json.dumps(values))
